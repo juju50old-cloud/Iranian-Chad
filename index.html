@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,220 +8,217 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-background: #0d1a0d;
-color: #ffffff;
-font-family: ‘Rubik’, sans-serif;
-overflow-x: hidden;
-}
+  body {
+    background: #0d1a0d;
+    color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+    overflow-x: hidden;
+  }
 
-/* Three-stripe Iran flag background */
-.stripe-top { height: 33.3vh; background: #009900; position: fixed; top: 0; left: 0; right: 0; z-index: 0; }
-.stripe-mid { height: 33.3vh; background: #f0f0f0; position: fixed; top: 33.3vh; left: 0; right: 0; z-index: 0; }
-.stripe-bot { height: 33.4vh; background: #cc0000; position: fixed; top: 66.6vh; left: 0; right: 0; z-index: 0; }
+  /* Three-stripe Iran flag background */
+  .stripe-top { height: 33.3vh; background: #009900; position: fixed; top: 0; left: 0; right: 0; z-index: 0; }
+  .stripe-mid { height: 33.3vh; background: #f0f0f0; position: fixed; top: 33.3vh; left: 0; right: 0; z-index: 0; }
+  .stripe-bot { height: 33.4vh; background: #cc0000; position: fixed; top: 66.6vh; left: 0; right: 0; z-index: 0; }
 
-/* Dark overlay so text is readable */
-.overlay {
-position: fixed;
-inset: 0;
-background: rgba(0,0,0,0.72);
-z-index: 1;
-}
+  /* Dark overlay so text is readable */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    z-index: 1;
+  }
 
-.container {
-position: relative;
-z-index: 2;
-max-width: 700px;
-margin: 0 auto;
-padding: 0 24px 60px;
-text-align: center;
-}
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    text-align: center;
+  }
 
-/* Header stripe */
-.flag-bar {
-display: flex;
-height: 8px;
-width: 100%;
-position: fixed;
-top: 0; left: 0;
-z-index: 10;
-}
-.fb-g { flex: 1; background: #009900; }
-.fb-w { flex: 1; background: #f0f0f0; }
-.fb-r { flex: 1; background: #cc0000; }
+  /* Header stripe */
+  .flag-bar {
+    display: flex;
+    height: 8px;
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 10;
+  }
+  .fb-g { flex: 1; background: #009900; }
+  .fb-w { flex: 1; background: #f0f0f0; }
+  .fb-r { flex: 1; background: #cc0000; }
 
-/* Hero */
-.hero { padding: 70px 0 20px; }
+  /* Hero */
+  .hero { padding: 70px 0 20px; }
 
-h1 {
-font-family: ‘Lalezar’, cursive;
-font-size: clamp(60px, 14vw, 120px);
-line-height: 1;
-color: #FFD700;
-text-shadow: 0 0 40px rgba(255,215,0,0.4);
-margin-bottom: 4px;
-}
+  h1 {
+    font-family: 'Lalezar', cursive;
+    font-size: clamp(60px, 14vw, 120px);
+    line-height: 1;
+    color: #FFD700;
+    text-shadow: 0 0 40px rgba(255,215,0,0.4);
+    margin-bottom: 4px;
+  }
 
-.ticker {
-font-family: ‘Lalezar’, cursive;
-font-size: clamp(22px, 5vw, 42px);
-color: rgba(255,255,255,0.7);
-letter-spacing: 8px;
-margin-bottom: 32px;
-}
+  .ticker {
+    font-family: 'Lalezar', cursive;
+    font-size: clamp(22px, 5vw, 42px);
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 8px;
+    margin-bottom: 32px;
+  }
 
-.chad-img {
-width: min(280px, 70vw);
-height: auto;
-display: block;
-margin: 0 auto 32px;
-filter: drop-shadow(0 8px 32px rgba(255,215,0,0.35));
-animation: float 2.8s ease-in-out infinite;
-}
-@keyframes float {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-14px); }
-}
+  .chad-img {
+    width: min(280px, 70vw);
+    height: auto;
+    display: block;
+    margin: 0 auto 32px;
+    filter: drop-shadow(0 8px 32px rgba(255,215,0,0.35));
+    animation: float 2.8s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
 
-.tagline {
-font-family: ‘Lalezar’, cursive;
-font-size: clamp(18px, 4vw, 30px);
-color: #ffffff;
-letter-spacing: 2px;
-margin-bottom: 8px;
-text-transform: uppercase;
-}
+  .tagline {
+    font-family: 'Lalezar', cursive;
+    font-size: clamp(18px, 4vw, 30px);
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
 
-.sub {
-font-size: 13px;
-color: rgba(255,255,255,0.45);
-margin-bottom: 40px;
-font-style: italic;
-}
+  .sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 40px;
+    font-style: italic;
+  }
 
-/* Divider */
-.flag-divider {
-display: flex;
-height: 5px;
-border-radius: 3px;
-overflow: hidden;
-margin: 48px 0;
-}
-.fd-g { flex: 1; background: #009900; }
-.fd-w { flex: 1; background: #f0f0f0; }
-.fd-r { flex: 1; background: #cc0000; }
+  /* Divider */
+  .flag-divider {
+    display: flex;
+    height: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 48px 0;
+  }
+  .fd-g { flex: 1; background: #009900; }
+  .fd-w { flex: 1; background: #f0f0f0; }
+  .fd-r { flex: 1; background: #cc0000; }
 
-/* Pumpfun box */
-.launch-box {
-background: rgba(255,255,255,0.05);
-border: 2px solid #FFD700;
-border-radius: 16px;
-padding: 36px 28px;
-margin-bottom: 40px;
-}
-.launch-box h2 {
-font-family: ‘Lalezar’, cursive;
-font-size: 28px;
-color: #FFD700;
-margin-bottom: 10px;
-letter-spacing: 2px;
-}
-.launch-box p {
-color: rgba(255,255,255,0.6);
-font-size: 14px;
-line-height: 1.7;
-margin-bottom: 24px;
-}
+  /* Pumpfun box */
+  .launch-box {
+    background: rgba(255,255,255,0.05);
+    border: 2px solid #FFD700;
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 40px;
+  }
+  .launch-box h2 {
+    font-family: 'Lalezar', cursive;
+    font-size: 28px;
+    color: #FFD700;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  .launch-box p {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
 
-.btn {
-display: inline-block;
-padding: 16px 40px;
-border-radius: 10px;
-font-family: ‘Lalezar’, cursive;
-font-size: 22px;
-letter-spacing: 2px;
-text-decoration: none;
-background: linear-gradient(135deg, #009900, #00bb00);
-color: white;
-box-shadow: 0 4px 28px rgba(0,153,0,0.45);
-transition: all 0.2s;
-}
-.btn:hover {
-transform: translateY(-3px) scale(1.04);
-box-shadow: 0 8px 36px rgba(0,200,0,0.55);
-}
+  .btn {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 10px;
+    font-family: 'Lalezar', cursive;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background: linear-gradient(135deg, #009900, #00bb00);
+    color: white;
+    box-shadow: 0 4px 28px rgba(0,153,0,0.45);
+    transition: all 0.2s;
+  }
+  .btn:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 36px rgba(0,200,0,0.55);
+  }
 
-/* About */
-.about {
-margin-bottom: 40px;
-}
-.section-title {
-font-family: ‘Lalezar’, cursive;
-font-size: 32px;
-color: #FFD700;
-margin-bottom: 16px;
-letter-spacing: 2px;
-}
-.about p {
-color: rgba(255,255,255,0.6);
-font-size: 15px;
-line-height: 1.8;
-}
+  /* About */
+  .about {
+    margin-bottom: 40px;
+  }
+  .section-title {
+    font-family: 'Lalezar', cursive;
+    font-size: 32px;
+    color: #FFD700;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+  .about p {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    line-height: 1.8;
+  }
 
-/* Marquee */
-.marquee-wrap {
-overflow: hidden;
-margin: 40px 0;
-}
-.marquee-inner {
-white-space: nowrap;
-display: inline-block;
-animation: marquee 14s linear infinite;
-font-family: ‘Lalezar’, cursive;
-font-size: 16px;
-letter-spacing: 4px;
-}
-@keyframes marquee {
-from { transform: translateX(0); }
-to { transform: translateX(-50%); }
-}
-.m-g { color: #009900; }
-.m-w { color: #ffffff; }
-.m-r { color: #cc0000; }
+  /* Marquee */
+  .marquee-wrap {
+    overflow: hidden;
+    margin: 40px 0;
+  }
+  .marquee-inner {
+    white-space: nowrap;
+    display: inline-block;
+    animation: marquee 14s linear infinite;
+    font-family: 'Lalezar', cursive;
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .m-g { color: #009900; }
+  .m-w { color: #ffffff; }
+  .m-r { color: #cc0000; }
 
-/* Footer */
-footer {
-border-top: 1px solid rgba(255,255,255,0.1);
-padding-top: 32px;
-margin-top: 20px;
-}
-.footer-logo {
-font-family: ‘Lalezar’, cursive;
-font-size: 24px;
-color: #FFD700;
-margin-bottom: 10px;
-}
-.disclaimer {
-font-size: 11px;
-color: rgba(255,255,255,0.2);
-line-height: 1.7;
-max-width: 480px;
-margin: 0 auto;
-}
+  /* Footer */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 32px;
+    margin-top: 20px;
+  }
+  .footer-logo {
+    font-family: 'Lalezar', cursive;
+    font-size: 24px;
+    color: #FFD700;
+    margin-bottom: 10px;
+  }
+  .disclaimer {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+  }
 </style>
-
 </head>
 <body>
 
 <!-- Iran flag stripes in background -->
-
 <div class="stripe-top"></div>
 <div class="stripe-mid"></div>
 <div class="stripe-bot"></div>
 <div class="overlay"></div>
 
 <!-- Top flag bar -->
-
 <div class="flag-bar">
   <div class="fb-g"></div>
   <div class="fb-w"></div>
@@ -244,7 +240,7 @@ margin: 0 auto;
     <h2>🚀 Fair Launch on Pump.fun</h2>
     <p>No insider allocation. No VC. No BS.<br>100% fair launch — everyone gets in at the same price. The chad way.</p>
     <a href="https://pump.fun/coin/Cv8Ma4DXJKxKu6pZMXuZRAwhxf1o2QBqcjAReRgopump" class="btn">Buy $ICHAD on Pump.fun</a>
-
+    
   </div>
 
   <div class="flag-divider"><div class="fd-g"></div><div class="fd-w"></div><div class="fd-r"></div></div>
